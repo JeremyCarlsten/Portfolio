@@ -1,0 +1,471 @@
+@import url('css/reset.css');
+
+.clear { clear: both; }
+
+
+/*******************************************************************************
+  header
+*******************************************************************************/
+
+h1{
+    font-family: 'Yanone Kaffeesatz', serif;
+    font-size: 2em;
+    line-height: 1.3em;
+    font-weight: 500;
+    color: #000;
+}
+h1 a { color: #000; text-decoration: none; outline: none; }
+h2{
+    font-family: 'Yanone Kaffeesatz', serif;
+    font-size: 1.6em;
+    line-height: 1.3em;
+    font-weight: 400;
+
+}
+h3 {
+    font-family: 'Yanone Kaffeesatz', serif;
+    font-size: .7em;
+    line-height: 1.3em;
+    font-weight: 100;
+    position: relative;
+    left: 70px; top: -10px;
+}
+h4 {
+    font-family: 'Yanone Kaffeesatz', serif;
+    font-size: .7em;
+    line-height: 1.3em;
+    font-weight: 100;
+}
+#page_wrap{
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+/*******************************************************************************
+nav
+*******************************************************************************/
+nav {
+    float: right;
+    position: relative; top: -35px;
+}
+nav ul li{
+    list-style: none;
+    display: inline;
+    padding: 0 7px;
+}
+nav ul li a{
+    color: #fff;
+    font-family: 'Yannone Kaffeesatz';
+    font-size: 1.2em;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    color: #bbb;
+    background:url();
+}
+.menu-desc{
+    font-size: 7px;
+    font-family: 'Yannone Kaffeesatz';
+    font-weight: 200;
+    text-decoration: none;
+
+}
+
+
+
+/*******************************************************************************
+ Slider
+*******************************************************************************/
+
+.slider {
+    width: 100%; height: 300px;
+    background:url('images/slider_bg.png') repeat-x;
+
+
+
+
+}
+.slider_bg{
+    height: 302px; width: 100%;
+    background: url('images/skyline.png') no-repeat bottom center;
+
+
+
+
+}
+.slider_bg p {
+    padding: 200px 0px;
+    width: 50px; height: 302px;
+    font-family: tahoma, serif;
+    letter-spacing: 76%;
+    line-height: 1.5em;
+    display: inline;
+    font-size: 1.4em;
+}
+.slider_bg h4 {
+    font-size: 1.6em;
+    font-weight: 700;
+
+}
+.slider_bg a { float: right; margin: 20px; }
+.cup{
+    width: 50%;
+    height: 100%;
+    position: relative;
+    top: -60px;
+    float: right;
+}
+
+#get_started {
+    display: block;
+    width: 115px;
+    height: 61px;
+    background:url('images/sprite.png');
+    color: #000;
+    text-decoration: none;
+    font-family: tahoma, serif;
+    font-size: 21px;
+    letter-spacing: 76%;
+    line-height: 61px;
+    padding: 0 17px;
+}
+#get_started:hover {
+    background-position: 0 -60px;
+    color: #202020;
+}
+#welcome{
+    position: relative;
+    top: 25px; left: 0px;
+}
+
+
+/*******************************************************************************
+   homepage
+*******************************************************************************/
+.latest_work { width: 400px; float: left; margin: 20px 0px;  }
+
+.portfolio_img_bg {
+    background:url('images/slider_bg.png') no-repeat;
+    width: 450px;
+    height: 210px;
+    display: block;
+
+}
+.homeport_img{
+    width: 350px;
+    padding: 5px 30px 15px 10px;
+    display: block;
+
+    outline: none;
+    border: none;
+}
+.right-port{
+    height: 200px;
+    width: 350px;
+    overflow: hidden;
+    position: relative;
+    top: 6px;
+}
+
+.about {
+    float: left;
+    width: 350px;
+    margin: 0px;
+    position: relative;
+    top: -65px;
+}
+.about h2 {
+    font-family: 'Yannone Kaffeesatz', tahoma;
+    letter-spacing: 76%;
+    line-height: 1.5em;
+    display: inline;
+    font-size: 1.6em;
+}
+
+
+
+/*******************************************************************************
+ Contact me
+*******************************************************************************/
+#contact {
+    width: 600px; height: 100%;
+    float: left;
+    margin: 10px auto;
+}
+#info {
+    width: 220px;
+    float: left;
+    position: relative;
+    top: 160px; left: -230px;
+    padding: 5px;
+    line-height: 1.5em;
+
+}
+#info ul { border-top: 1px solid #fff; }
+#twitter {
+    display: none;
+    background:url('images/sprite.png') -30px no-repeat;
+
+}
+#facebook {
+    display: none;
+    background:url('images/sprite.png') -30px no-repeat;
+
+}
+
+
+/*******************************************************************************
+  resume
+*******************************************************************************/
+.resume{
+    font-family: tahoma, serif;
+    font-size: 12px;
+    font-style: italic;
+    width: 960px;
+    margin: 0px auto;
+    line-height: 1.4em;
+
+
+}
+.resume h4{
+    font-family: 'Yannone Kaffeesatz', tahoma, serif;
+    font-size: 16px;
+    font-weight: 400px;
+    font-style: normal;
+    display: block;
+    width: 100%;
+    margin-bottom: 5px; padding: 0px 0px 3px 10px;
+    border-bottom: 1px solid #fff;
+
+}
+.resume h5 {
+    font-family: 'Yannone Kaffeesatz', tahoma;
+    font-size: 14px;
+    font-weight: 300px;
+    font-style: normal;
+    margin: 0px 0px 5px;
+
+
+}
+.resume ul{
+    margin-left: 30px;
+    list-style: circle;
+
+}
+.resume #resume_entry {
+
+    margin: 20px 0px;
+}
+.resume #entry{
+    margin: 0px 0px 15px 20px;
+}
+#entry #description{
+    margin-left: 10px;
+}
+#resume_entry .software {
+    width: 400px;
+    margin: 0px 10px;
+    float: left;
+}
+#resume_entry .languages{
+    width: 400px;
+    margin: 0px;
+    float: left;
+}
+#resume_entry h6 {
+    font-family: 'Yannone Kaffeesatz', tahoma, serif;
+    font-size: 12px;
+    font-weight: 300px;
+    font-style: normal;
+    margin: 0px 0px 5px;
+}
+#refrence{
+    margin: 10px 0px 0px 0px;
+}
+#refrence ul { list-style: none; }
+.meta{
+    position: relative;
+    left: 760px;
+    width: 220px;
+    height: 60px;
+}
+.download{
+
+    display: block;
+    width: 115px;
+    height: 61px;
+    background:url('images/sprite.png');
+    color: #000;
+    text-decoration: none;
+    font-family: tahoma, serif;
+    font-size: 21px;
+    letter-spacing: 76%;
+    font-style: normal;
+    float: right;
+    line-height: 61px;
+    padding: 0 17px;
+    text-indent: 10px;
+}
+.download:hover {
+    background-position: 0 -60px;
+    color: #202020;
+}
+.meta ul{ float: left; }
+.facebook{
+    display: block;
+    width: 25px;
+    height: 25px;
+    background:url('images/sprite.png');
+    background-position:  -183px 0px ;
+    text-indent: -99999px;
+    margin: 0px 5px 10px 5px;
+}
+.facebook:hover{
+    background-position: -183px -25px;
+}
+.twitter:hover{
+    background-position: -151px -25px;
+}
+.twitter{
+    display: block;
+    width: 25px;
+    height: 25px;
+    background:url('images/sprite.png');
+    background-position:  -151px 0px ;
+    text-indent: -99999px;
+    margin: 0px 5px 0px 5px;
+}
+
+
+/*******************************************************************************
+  Portfolio
+*******************************************************************************/
+#portfolio_wrap{
+    width: 100%;
+    margin: 0px auto;
+    background:url;
+}
+.portfolio_entry{
+    width: 960px;
+    height: 200px;
+    margin-top: 0px;
+    padding: 10px;
+}
+.portfolio_image{
+    width: 175px;
+    height: 140px;
+    padding: 5px 10px 15px 10px;
+    display: block;
+    margin-right: 20px;
+    outline: none;
+    border: none;
+}
+.portfolio_entry h4 {
+    font-size: 1.7em;
+    position: relative;
+    left: 20px;
+}
+.portfolio_entry #portfolio_description{
+    width: 625px;
+    padding: 0px 30px;
+    float: left;
+    display: block;
+    margin: 0px;
+    font-family: tahoma, serif;
+    letter-spacing: 76%;
+    line-height: 1.5em;
+    display: inline;
+    font-size: .8em;
+}
+
+.img_surround{
+    width: 200px;
+    height: 160px;
+    background:url('images/slider_bg.png') repeat-x;
+    float: left;
+}
+.portfolio_nav{ margin-top: 20px; margin-bottom: 0px; }
+.portfolio_nav ul{ height: 35px; margin: 0px;}
+.portfolio_nav ul li{
+    list-style: none;
+    display: inline;
+    background:url('images/slider_bg.png') repeat-x;
+    width: 100px;
+    height: 100%;
+    padding: 10px 15px;
+    margin: 10px 20px 0px 10px;
+)
+
+}
+.portfolio_nav ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+.portfolio_nav ul li:hover{ background: #000; }
+.portfolio_nav .pcurrent{ background: #000; }
+.portfolio_nav ul li:hover a{ color: #bbb; }
+.divider{
+    border: none;
+    height: 1px;
+    background: #fff;
+    margin: 0px;
+    padding: 0px
+}
+#web_entrys   {  }
+#photo_entrys { display: none; }
+#other_entrys { display: none; }
+
+.visit {
+    color: #fff;
+    float: left;
+    margin: 10px;
+    position: relative;
+    left: 20px;
+}
+
+/*******************************************************************************
+  footer
+*******************************************************************************/
+
+footer {
+
+    /*background:url('images/footer_bg.png') no-repeat center;   */
+    width: 960px; height: 30px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+#footer_item{
+    border-left: 1px solid #bbbbbb;
+    display: inline;
+    padding: 0px 10px;
+}
+#footer_item:nth-child(1) { border: none; }
+#footer_item li{ display: inline; padding: 0px 5px; }
+#footer_item li a{
+    text-decoration: none;
+    color: #000;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    transition: .5s all;
+}
+#footer_item li a:hover { color: #bbbbbb; }
+/**************************** Sticky Footer ***********************************/
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -30px; /* the bottom margin is the negative value of the             footer's height */
+}
+footer, .push {
+    height: 30px; /* .push must be the same height as .footer */
+}
+
+/*
+
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+
+*/
