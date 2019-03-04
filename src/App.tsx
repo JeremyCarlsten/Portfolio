@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import EventList from './components/EventList';
+import EventList from './components/events/EventList';
 
 class App extends Component {
   render() {
