@@ -1,0 +1,255 @@
+/*
+
+*/
+
+@import url('reset.css');
+
+html {
+    color: #000;
+}
+
+body {
+    overflow-x: hidden;
+    background: url('/images/light_noise_diagonal.png')
+}
+
+.clear { clear: both; }
+
+
+/*******************************************************************************
+  header
+*******************************************************************************/
+
+h1{
+    font-family: 'Yanone Kaffeesatz', serif;
+    font-size: 2em;
+    line-height: 1.3em;
+    font-weight: 500;
+    color: #000;
+    width: inherit;
+}
+h1 a { color: #000; text-decoration: none; outline: none; }
+h2{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.6em;
+    line-height: 1.3em;
+    font-weight: 400;
+    width: inherit;
+
+}
+h3 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: .7em;
+    line-height: 1.3em;
+    font-weight: 100;
+    position: relative;
+    left: 70px; top: -10px;
+    width: inherit;
+}
+h4 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: .7em;
+    line-height: 1.3em;
+    font-weight: 100;
+    width: inherit;
+}
+
+.page-wrap{
+    width: 95%;
+    margin: 0 auto;
+}
+
+#header {
+    padding: 20px;
+}
+
+/*******************************************************************************
+nav
+*******************************************************************************/
+nav {
+    float: right;
+    position: relative; top: -35px;
+}
+
+nav ul {
+    list-style: none;
+}
+nav ul li {
+    display: inline-block;
+}
+nav ul li a {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 2em;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+    transition: all .2s;
+}
+nav ul li a:hover {
+    color: #555;
+}
+
+
+/* stroke */
+nav.stroke ul li a,
+nav.fill ul li a {
+    position: relative;
+}
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+}
+nav.stroke ul li a:hover:after {
+    width: 100%;
+}
+
+nav.fill ul li a {
+    transition: all 1s;
+}
+
+nav.fill ul li a:after {
+    text-align: left;
+    content: '.';
+    margin: 0;
+    opacity: 0;
+}
+nav.fill ul li a.active,
+nav.fill ul li a:hover {
+    color: #fff;
+    z-index: 1;
+}
+nav.fill ul li a.active:after,
+nav.fill ul li a:hover:after {
+    z-index: -10;
+    animation: fill 1s forwards;
+    -webkit-animation: fill 1s forwards;
+    -moz-animation: fill 1s forwards;
+    opacity: 1;
+}
+
+/* Keyframes */
+@-webkit-keyframes fill {
+    0% {
+        width: 0%;
+        height: 1px;
+    }
+    50% {
+        width: 100%;
+        height: 1px;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        background: #333;
+    }
+}
+
+/* Keyframes */
+@-webkit-keyframes circle {
+    0% {
+        width: 1px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        height: 1px;
+        z-index: -1;
+        background: #eee;
+        border-radius: 100%;
+    }
+    100% {
+        background: #aaa;
+        height: 5000%;
+        width: 5000%;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 0;
+    }
+}
+
+.wrapper {
+    overflow: hidden;
+    width: 95%;
+    margin: 3em auto;
+}
+
+.masonry {
+    margin: 1.5em 0;
+    padding: 0;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+    font-size: .85em;
+}
+
+.item {
+    display: inline-block;
+    background: #ffffff;
+    padding: 1em;
+    margin: 0 0 1.5em;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-shadow: 2px 2px 4px 0 #ccc;
+}
+
+@media only screen and (min-width: 400px) {
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+@media only screen and (max-width: 700px) {
+    nav {
+        float: none;
+        margin-top: 10px;
+        position: inherit;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .masonry {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+
+
+@media only screen and (min-width: 1280px) {
+    .page-wrap {
+        width: 1260px;
+        margin: 0 auto;
+    }
+}
