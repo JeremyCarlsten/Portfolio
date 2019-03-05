@@ -36,5 +36,4 @@ export default class GitlabService {
         let regex = /JeremyCarlsten\//gi
         return reponame.replace(regex, '')
     }
-
 }

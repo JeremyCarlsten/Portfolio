@@ -13,6 +13,18 @@ body {
     background: url('/images/light_noise_diagonal.png')
 }
 
+p {
+    line-height: 1.2em;
+    size: 1em;
+    margin-left: 5px;
+    font-family: sans-serif;
+}
+
+.date {
+    size: .9em;
+    font-style: italic;
+}
+
 .clear { clear: both; }
 
 
