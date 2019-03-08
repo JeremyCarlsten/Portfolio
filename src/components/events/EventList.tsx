@@ -12,7 +12,7 @@ export interface State { eventData: Array<any> }
 class EventList extends Component<Object, State> {
 
   componentDidMount(){
-    new GithubService().getEvents().then(result => {
+    GithubService.getEvents().then(result => {
       this.setState({eventData: [...this.state.eventData, ...result]})
     })
   }
