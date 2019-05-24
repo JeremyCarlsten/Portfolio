@@ -8,6 +8,7 @@ const defaultEventHeaders: any = {
 export default class GithubEventData {
   public id: number | undefined;
   public header: string | undefined;
+  public project: string | undefined;
   public text: string | undefined;
   public createdAt: Date;
 
@@ -19,6 +20,7 @@ export default class GithubEventData {
       this.id = 0;
       this.header =  'Oops...';
       this.text =  'Something has gone wrong with this event.';
+      this.project = ''
       this.createdAt = new Date();
     }
   }
@@ -28,8 +30,13 @@ export default class GithubEventData {
     this.createdAt = new Date(event.created_at);
     switch(event.type){
       case('PushEvent'): {
-          this.header = 'Pushed Commits to ' + this.parseRepositoryName(event);
-          this.text = `${event.payload.distinct_size} commits on branch ${event.payload.ref.replace(/refs\/heads\//gi, '')}`
+          this.header = `Pushed ${event.payload.distinct_size} Commits on branch ${event.payload.ref.replace(/refs\/heads\//gi, '')}`
+          this.project = this.parseRepositoryName(event);
+          this.text = '';
+          event.payload.commits.forEach((commit: any) => {
+            this.text = this.text + "\n* " + commit.message
+          });
+  
         break;
       }
       case('CreateEvent'): {
@@ -37,7 +44,8 @@ export default class GithubEventData {
         break;
       }
       case('IssueCommentEvent'): {
-        this.header = `Commented on project ${this.parseRepositoryName(event)}`;
+        this.header = `Commented on issue ${event.payload.issue.title}(!${event.payload.issue.number})`;
+        this.project = this.parseRepositoryName(event)
         this.text = event.payload.comment.body
         break;
       }
@@ -56,12 +64,25 @@ export default class GithubEventData {
         this.text = ''
         break;
       }
+      case('IssuesEvent'): {
+        if(event.payload.action === 'opened'){
+          this.header = `Created issue for project ${this.parseRepositoryName(event)}`;
+          this.text = event.payload.issue.title + ': ' + event.payload.issue.body
+        }
+        else if(event.payload.action === 'closed'){
+          this.header = `Closed issue ${event.payload.issue.title}`;
+          this.text = `for project ${this.parseRepositoryName(event)}`;
+        }
+        else if(event.payload.action === 'created'){
+
+        }
+          break;
+      }
       default: {
         this.header = 'Oops...'
-        this.text = '';
+        this.text = 'Looks like this event type is not parsed.';
       }
     }
-   
   }
 
   private handleCreateEvent(event: any) {

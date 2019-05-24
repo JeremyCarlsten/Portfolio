@@ -4,6 +4,7 @@ const githubApiUrl: string = 'https://api.github.com/users/';
 const githubUsername: string = 'JeremyCarlsten';
 
 
+
 export default class GithubService {
 
     public static getEvents():Promise<any> {
@@ -12,24 +13,22 @@ export default class GithubService {
         if(localStorageData == undefined){
             return fetch(githubApiUrl + githubUsername + '/events')
             .then((response: any) => {
-                if(response.status === 200){
-                    let contentType = response.headers.get('Content-Type')
-                    if (contentType && contentType === 'application/json') {
-                        let data:any = response.clone();
-                        
-                        data.json()
-                            .map((event: any) => new GithubEventData(event))
-                            .sort((a:GithubEventData, b:GithubEventData) => {
-                                return b.createdAt.getTime() - a.createdAt.getTime(); 
-                            });
-                            
-                        localStorage.setItem(localStorageKey, response.text());
-                        return data
-                    }
-                }
-                return response
+                 return response.json();
+            })
+            .then(data => {
+                let result = data.map((event: any) => new GithubEventData(event))
+                .sort((a:GithubEventData, b:GithubEventData) => {
+                    return b.createdAt.getTime() - a.createdAt.getTime(); 
+                });
+                
+                localStorage.setItem(localStorageKey, JSON.stringify(result));
+                return result
+            }).catch((error) => {
+                console.error(error)
+                return error;
             });
         }else {
+            console.log("sending localstorage");
             return Promise.resolve(JSON.parse(localStorageData));
         }
     }
