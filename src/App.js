@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import EventList from './components/events/EventList';
+import EventList from './components/events/event-list';
 
-class App extends Component {
-  render() {
+export default function App(){
     return (
       <div className="App">
         <div id="header">
@@ -12,9 +11,9 @@ class App extends Component {
 
           <nav className="fill">
               <ul>
-                  <li><a className="active" href="#">Home</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Portfolio</a></li>
+                  <li><a className="active" href="/">Home</a></li>
+                  <li><a href="/">Blog</a></li>
+                  <li><a href="/">Portfolio</a></li>
               </ul>
           </nav>
       </div>
@@ -25,7 +24,4 @@ class App extends Component {
 
       </div>
     );
-  }
 }
-
-export default App;

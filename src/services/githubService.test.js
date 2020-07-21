@@ -1,5 +1,5 @@
 import GithubService from './githubService';
-import GithubEventData from '../components/events/GithubEventData';
+// import GithubEventData from '../components/events/GithubEventData';
 
 function mockFetch(data: any, ok = true) {
     return jest.fn().mockImplementation(() =>
