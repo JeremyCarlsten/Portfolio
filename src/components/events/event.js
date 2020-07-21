@@ -3,7 +3,7 @@ import * as React from 'react';
 import TimeAgo from 'react-timeago';
 import './event.css';
 
-const Event = (props: any) => {
+export default function(props) {
     return (
         <div className="item">
             <div className='item-header'>
@@ -15,5 +15,3 @@ const Event = (props: any) => {
         </div>
     )
 }
-
-export default Event;
