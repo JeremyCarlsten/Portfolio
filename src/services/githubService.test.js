@@ -16,7 +16,7 @@ describe('github-serivce', () => {
    const dummyData = [{"id": "123", "type": "bogus"}]
 
     beforeEach(() => {
-      window.localStorage.clear();
+      window.sessionStorage.clear();
     })
 
     // it('should get events from github', async () => {
@@ -26,7 +26,7 @@ describe('github-serivce', () => {
     //     let result = await GithubService.getEvents();
     //     console.log("result ", result)
     //     expect(result.length).toBe(1);
-    //     expect(window.localStorage.getItem('JeremyCarlsten-github-events')).not.toBe(null)
+    //     expect(window.sessionStorage.getItem('JeremyCarlsten-github-events')).not.toBe(null)
     // });
 
     // it('should get events from github none found', async () => { 

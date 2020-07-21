@@ -21,7 +21,7 @@ export function handleGithubEvent(event) {
 function initialize(event) {
     const eventType = event.type;
 
-    console.log('event', event)
+    // console.log('event', event)
 
     if (eventType === 'PushEvent') {
         const events = event.payload.commits.reduce((acc, commit) => {
@@ -32,6 +32,7 @@ function initialize(event) {
             header: `Pushed ${event.payload.distinct_size} Commits on branch ${event.payload.ref.replace(/refs\/heads\//gi, '')}`,
             project: parseRepositoryName(event),
             text: '',
+            id: event.id,
             createdAt: new Date(),
             events
         }
@@ -44,6 +45,7 @@ function initialize(event) {
             header: `Commented on issue ${event.payload.issue.title} #${event.payload.issue.number}`,
             project: parseRepositoryName(event),
             createdAt: new Date(),
+            id: event.id,
             text: event.payload.comment.body
         }
     }
@@ -54,6 +56,7 @@ function initialize(event) {
         return {
             header: `Forked project ${parseRepositoryName(event)}`,
             text: '',
+            id: event.id,
             createdAt: new Date(),
         }
     }
@@ -61,6 +64,7 @@ function initialize(event) {
         return {
             header: `Watched project ${parseRepositoryName(event)}`,
             createdAt: new Date(),
+            id: event.id,
             text: ''
         }
     }
@@ -79,6 +83,7 @@ function handleCreateEvent(event) {
         return {
             header: `Created branch ${event.payload.ref} on ${parseRepositoryName(event)}`,
             createdAt: new Date(),
+            id: event.id,
             text: ''
         }
     }
@@ -87,6 +92,7 @@ function handleCreateEvent(event) {
         return {
             header: `Created project ${parseRepositoryName(event)}`,
             createdAt: new Date(),
+            id: event.id,
             text: event.payload.description
         }
     }
@@ -94,6 +100,7 @@ function handleCreateEvent(event) {
     return {
         header: 'Created ' + parseRepositoryName(event),
         createdAt: new Date(),
+        id: event.id,
         text: 'asdf'
     }
 }
@@ -103,6 +110,7 @@ function handleIssuesEvent(event) {
         return {
             header: `Created issue for project ${parseRepositoryName(event)}`,
             createdAt: new Date(),
+            id: event.id,
             text: event.payload.issue.title + ': ' + event.payload.issue.body
         }
     }
@@ -111,6 +119,7 @@ function handleIssuesEvent(event) {
         return {
             header: `Closed issue #${event.payload.issue.number} ${event.payload.issue.title}`,
             createdAt: new Date(),
+            id: event.id,
             project: parseRepositoryName(event),
             text: ''
         }
@@ -122,6 +131,7 @@ function handlePullRequest(event){
         return {
             header: `Created Pull Request`,
             createdAt: new Date(),
+            id: event.id,
             project: parseRepositoryName(event),
             text: event.payload.pull_request.body
         }
@@ -130,6 +140,7 @@ function handlePullRequest(event){
         return {
             header: `Closed Pull Request #${event.payload.number}`,
             project: parseRepositoryName(event),
+            id: event.id,
             createdAt: new Date(),
         }
     }

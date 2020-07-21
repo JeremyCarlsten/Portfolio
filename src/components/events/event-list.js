@@ -8,7 +8,6 @@ class EventList extends Component {
 
   componentDidMount(){
     getEvents().then(result => {
-      console.log('githubservice returned: ', result);
       this.setState({eventData: [...this.state.eventData, ...result]})
     })
   }
@@ -24,7 +23,6 @@ class EventList extends Component {
   }
 
   render() {
-    console.log(this.state.eventData)
     let events = this.state.eventData.map((it) => {
       if(!it) return;
       return <Event header={it.header} text={it.text} date={it.createdAt.toString()} key={it.id} projectName={it.project} />
