@@ -7,11 +7,11 @@ export default function App(){
       <div className="App">
         <div id="header">
           <h1>Jeremy Carlsten</h1>
-          <h3>Developer, Woodworker, Geek.</h3>
+          <h3>Developer, Dad, Geek.</h3>
 
           <nav className="fill">
               <ul>
-                  <li><a className="active" href="/">Hme</a></li>
+                  <li><a className="active" href="/">Home</a></li>
                   <li><a href="/">Blog</a></li>
                   <li><a href="/">Portfolio</a></li>
               </ul>
