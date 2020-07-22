@@ -5,7 +5,7 @@ export function handleGithubEvent(event) {
             header: "Oops...",
             text: "something has gone wrong here.",
             project: '',
-            createdAt: new Date()
+            createdAt: getCreatedAt({})
         }
     }
 
@@ -13,6 +13,7 @@ export function handleGithubEvent(event) {
 }
 
 function initialize(event) {
+    console.log('event', event)
     const eventType = event.type;
 
     if (eventType === 'PushEvent') {
@@ -25,7 +26,7 @@ function initialize(event) {
             project: parseRepositoryName(event),
             text: '',
             id: event.id,
-            createdAt: new Date(),
+            createdAt: getCreatedAt(event),
             events
         }
     }
@@ -36,7 +37,7 @@ function initialize(event) {
         return {
             header: `Commented on issue ${event.payload.issue.title} #${event.payload.issue.number}`,
             project: parseRepositoryName(event),
-            createdAt: new Date(),
+            createdAt: getCreatedAt(event),
             id: event.id,
             text: event.payload.comment.body
         }
@@ -49,13 +50,13 @@ function initialize(event) {
             header: `Forked project ${parseRepositoryName(event)}`,
             text: '',
             id: event.id,
-            createdAt: new Date(),
+            createdAt: getCreatedAt(event),
         }
     }
     if (eventType === 'WatchEvent') {
         return {
             header: `Watched project ${parseRepositoryName(event)}`,
-            createdAt: new Date(),
+            createdAt: getCreatedAt(event),
             id: event.id,
             text: ''
         }
@@ -72,36 +73,21 @@ function initialize(event) {
 function handleCreateEvent(event) {
     let type = event.payload.ref_type;
     if (type === 'branch') {
-        return {
-            header: `Created branch ${event.payload.ref} on ${parseRepositoryName(event)}`,
-            createdAt: new Date(),
-            id: event.id,
-            text: ''
-        }
+        return buildResponse(event, `Created branch ${event.payload.ref} on ${parseRepositoryName(event)}`)
     }
 
     if (type === 'repository') {
-        return {
-            header: `Created project ${parseRepositoryName(event)}`,
-            createdAt: new Date(),
-            id: event.id,
-            text: event.payload.description
-        }
+        return buildResponse(event, `Created project ${parseRepositoryName(event)}`, event.payload.description)
     }
 
-    return {
-        header: 'Created ' + parseRepositoryName(event),
-        createdAt: new Date(),
-        id: event.id,
-        text: 'asdf'
-    }
+    return buildResponse(event, `Created ${parseRepositoryName(event)}`)
 }
 
 function handleIssuesEvent(event) {
     if (event.payload.action === 'opened') {
         return {
             header: `Created issue for project ${parseRepositoryName(event)}`,
-            createdAt: new Date(),
+            createdAt: getCreatedAt(event),
             id: event.id,
             text: event.payload.issue.title + ': ' + event.payload.issue.body
         }
@@ -110,7 +96,7 @@ function handleIssuesEvent(event) {
     if (event.payload.action === 'closed') {
         return {
             header: `Closed issue #${event.payload.issue.number} ${event.payload.issue.title}`,
-            createdAt: new Date(),
+            createdAt: getCreatedAt(event),
             id: event.id,
             project: parseRepositoryName(event),
             text: ''
@@ -122,7 +108,7 @@ function handlePullRequest(event){
     if(event.payload.action === 'opened'){
         return {
             header: `Created Pull Request`,
-            createdAt: new Date(),
+            createdAt: getCreatedAt(event),
             id: event.id,
             project: parseRepositoryName(event),
             text: event.payload.pull_request.body
@@ -133,7 +119,7 @@ function handlePullRequest(event){
             header: `Closed Pull Request #${event.payload.number}`,
             project: parseRepositoryName(event),
             id: event.id,
-            createdAt: new Date(),
+            createdAt: getCreatedAt(event),
         }
     }
 }
@@ -149,6 +135,12 @@ function buildResponse(event, header, text = ""){
         text,
         project: parseRepositoryName(event),
         id: event.id,
-        createdAt: new Date(),
+        createdAt: getCreatedAt(event),
     }
+}
+
+function getCreatedAt(event){
+    if(!event.created_at) return new Date()
+
+    return new Date(event.created_at)
 }

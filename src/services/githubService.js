@@ -1,5 +1,5 @@
-// import GithubEventData from "../components/events/GithubEventData";
-import {handleGithubEvent} from "../components/events/GithubEventData";
+
+import {handleGithubEvent} from "../services/githubEventMapper";
 
 const githubApiUrl = 'https://api.github.com/users/';
 const githubUsername = 'JeremyCarlsten';
