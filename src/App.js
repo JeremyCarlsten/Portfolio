@@ -11,7 +11,7 @@ export default function App(){
 
           <nav className="fill">
               <ul>
-                  <li><a className="active" href="/">Home</a></li>
+                  <li><a className="active" href="/">Hme</a></li>
                   <li><a href="/">Blog</a></li>
                   <li><a href="/">Portfolio</a></li>
               </ul>
