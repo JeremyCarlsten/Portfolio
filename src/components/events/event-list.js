@@ -24,7 +24,7 @@ class EventList extends Component {
 
   render() {
     let events = this.state.eventData.map((it) => {
-      if(!it) return;
+      if(!it) return undefined;
       return <Event header={it.header} text={it.text} date={it.createdAt.toString()} key={it.id} projectName={it.project} />
     });
     return (
