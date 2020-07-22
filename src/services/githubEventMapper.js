@@ -13,7 +13,6 @@ export function handleGithubEvent(event) {
 }
 
 function initialize(event) {
-    console.log('event', event)
     const eventType = event.type;
 
     if (eventType === 'PushEvent') {

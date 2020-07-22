@@ -1,7 +1,7 @@
 import { handleGithubEvent } from '../services/githubEventMapper';
 import 'chance';
 
-describe.only('githubEventMapper', ()=> {
+describe('githubEventMapper', ()=> {
 
     describe('createEvent', () => {
         
@@ -13,7 +13,7 @@ describe.only('githubEventMapper', ()=> {
             
             expect(actual.header).toEqual(`Created branch ${event.payload.ref} on ${event.repo.name}`)
             expect(actual.text).toEqual('')
-            expect(actual.createdAt).toEqual(createdAt.toISOString())
+            expect(actual.createdAt).toEqual(createdAt)
         })
 
         it('should handle new project', () => {
@@ -25,7 +25,7 @@ describe.only('githubEventMapper', ()=> {
             
             expect(actual.header).toEqual(`Created project ${event.repo.name}`)
             expect(actual.text).toEqual(description)
-            expect(actual.createdAt).toEqual(createdAt.toISOString())
+            expect(actual.createdAt).toEqual(createdAt)
         })
 
         it('should return default create event if no ref_type', () => {
@@ -37,7 +37,7 @@ describe.only('githubEventMapper', ()=> {
             
             expect(actual.header).toEqual(`Created ${event.repo.name}`)
             expect(actual.text).toEqual('')
-            expect(actual.createdAt).toEqual(createdAt.toISOString())
+            expect(actual.createdAt).toEqual(createdAt)
         })
     });
 
@@ -57,7 +57,6 @@ describe.only('githubEventMapper', ()=> {
 });
 
 function createEvent(type, createdAt, payloadOverrides = {}){
-    console.log('created_at', createdAt.toISOString())
     return {
         type,
         actor: {
