@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getEvents } from '../../services/githubService';
-import { handleGithubEvent } from './GithubEventData';
+import { handleGithubEvent } from '../../services/githubEventMapper';
 import Event from './event';
 
 import './masonry.css';
