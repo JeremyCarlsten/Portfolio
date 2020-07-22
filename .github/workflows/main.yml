@@ -22,5 +22,5 @@ jobs:
         host: sc508.whpservers.com
         user: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        localDir: "build"
+        localDir: "build/"
         remoteDir: "/public_html/demo/jcc/"
