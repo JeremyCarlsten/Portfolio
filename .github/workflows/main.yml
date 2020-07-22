@@ -24,11 +24,3 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         localDir: "build"
         remoteDir: "/public_html/demo/jcc/"
-#     - name: FTP-Deploy-Action
-#       uses: SamKirkland/FTP-Deploy-Action@3.1.1
-#       with:
-#       # Deployment destination server & path. Formatted as protocol://domain.com:port/full/destination/path/
-#         ftp-server: sc508.whpservers.com/public_html/demo/jcc/
-#         ftp-username: ${{ secrets.FTP_USERNAME }}
-#         ftp-password: ${{ secrets.FTP_PASSWORD }}
-#         git-ftp-args: --all
