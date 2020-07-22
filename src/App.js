@@ -7,7 +7,7 @@ export default function App(){
       <div className="App">
         <div id="header">
           <h1>Jeremy Carlsten</h1>
-          <h3>Developer, Woodworker, Geek.</h3>
+          <h3>Developer, Dad, Geek.</h3>
 
           <nav className="fill">
               <ul>

@@ -1,10 +1,4 @@
-// const defaultEventHeaders = {
-//   "ForkEvent": "Forked project ",
-//   "WatchEvent": "Watched project "
-// }
-
 export function handleGithubEvent(event) {
-
     if (!event) {
         return {
             id: 0,
@@ -20,8 +14,6 @@ export function handleGithubEvent(event) {
 
 function initialize(event) {
     const eventType = event.type;
-
-    // console.log('event', event)
 
     if (eventType === 'PushEvent') {
         const events = event.payload.commits.reduce((acc, commit) => {
