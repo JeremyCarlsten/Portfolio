@@ -20,8 +20,6 @@ function initialize(event) {
         const numberOfCommits = event.payload.commits.length
         const commitMessages = event.payload.commits.map(commit => commit.message);
 
-        console.log('commit count', numberOfCommits)
-
         return {
             header: `Pushed ${numberOfCommits} Commits on branch ${event.payload.ref.replace(/refs\/heads\//gi, '')}`,
             project: parseRepositoryName(event),
@@ -75,7 +73,7 @@ function handleCreateEvent(event) {
     
     let type = event.payload.ref_type;
     if (type === 'branch') {
-        return buildResponse(event, `Created branch ${event.payload.ref}`)
+        return undefined;
     }
 
     if (type === 'repository') {

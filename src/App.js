@@ -5,13 +5,13 @@ import defaultEvents from './config/static-events';
 import {getEvents} from './services/githubService';
 
 export default function App(){
-    const [events, setEvents] = useState(defaultEvents);
+    const [events, setEvents] = useState([]);
 
     useEffect(() => {
       getEvents().then(githubEvents => {
-          setEvents(sortEvents([...events, ...githubEvents]))
+          return setEvents([...defaultEvents, ...githubEvents])
       })
-    }, [])
+    }, [setEvents])
 
     return (
       <div className="App">
@@ -34,13 +34,4 @@ export default function App(){
 
       </div>
     );
-}
-
-function sortEvents(events) {
-  return events
-    .sort((a, b) => {
-      if(!a || !b) return 0
-
-      return a.createdAt < b.createdAt ? 1 : -1
-    })
 }

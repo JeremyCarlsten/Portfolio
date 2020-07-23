@@ -4,18 +4,6 @@ import 'chance';
 describe('githubEventMapper', ()=> {
 
     describe('createEvent', () => {
-        
-        it('should handle new branch', () => {
-            const createdAt = new Date();
-            const event = createEvent('CreateEvent', createdAt, {ref_type: 'branch'})
-
-            const actual = handleGithubEvent(event)
-            
-            expect(actual.header).toEqual(`Created branch ${event.payload.ref}`)
-            expect(actual.text).toEqual('')
-            expect(actual.createdAt).toEqual(createdAt)
-        })
-
         it('should handle new project', () => {
             const createdAt = new Date();
             const description = chance.string();

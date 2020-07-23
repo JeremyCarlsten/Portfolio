@@ -11,16 +11,15 @@ export default function(props) {
                 <TimeAgo date={props.date} /><br />
             </div>
             {props.projectName ? <p className='project-name'>Project: {props.projectName}</p> : ''}
-            <p>{createEventText(props.text)}</p>
+            {createEventText(props.text)}
             {props.image ? <img className='event-image' src={'images/' + props.image} alt=""/> : undefined}
         </div>
     )
 }
 
 function createEventText(text) {
-    console.log('text: ', typeof text)
     if(text instanceof Array){
-    const listItems = text.map(item => <li>{item}</li>)
+    const listItems = text.map((item, index) => <li key={index}>{item}</li>)
         return (
             <ul className="commit-list">
                {listItems}
@@ -28,5 +27,5 @@ function createEventText(text) {
         )
     }
 
-    return text ? text.toString() : ''
+    return <p>{text ? text.toString() : ''}</p>
 }
