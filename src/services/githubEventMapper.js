@@ -31,7 +31,7 @@ function initialize(event) {
             events
         }
     }
-    
+
     if (eventType === 'CreateEvent') {
         return handleCreateEvent(event);
     }
@@ -76,7 +76,7 @@ function handleCreateEvent(event) {
     
     let type = event.payload.ref_type;
     if (type === 'branch') {
-        return buildResponse(event, `Created branch ${event.payload.ref} on ${parseRepositoryName(event)}`)
+        return buildResponse(event, `Created branch ${event.payload.ref}`)
     }
 
     if (type === 'repository') {
