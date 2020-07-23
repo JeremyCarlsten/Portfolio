@@ -1,6 +1,5 @@
 
 import {handleGithubEvent} from "../services/githubEventMapper";
-
 const githubApiUrl = 'https://api.github.com/users/';
 const githubUsername = 'JeremyCarlsten';
 
@@ -16,8 +15,10 @@ export function getEvents() {
             .then(data => {
                 let result = data
                     .map((event) => handleGithubEvent(event))
-                
-                // sessionStorage.setItem(sessionStorageKey, JSON.stringify(result));
+
+                if(process.env.NODE_ENV !== "development")
+                    sessionStorage.setItem(sessionStorageKey, JSON.stringify(result));
+                    
                 return result
             }).catch((error) => {
                 console.error(error)

@@ -14,7 +14,7 @@ function mockFetch(data, ok = true) {
 describe('github-serivce', () => {
   const dummyData = [{
     id: "123",
-    type: "PushEvent",
+    type: "CreateEvent",
     actor: {
       login: "bogus"
     },
@@ -23,7 +23,8 @@ describe('github-serivce', () => {
     },
     payload: {
       commits: [{}],
-      ref: "bogus"
+      ref: "bogus",
+      ref_type: 'repository'
     }
   }]
 
