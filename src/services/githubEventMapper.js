@@ -15,20 +15,23 @@ export function handleGithubEvent(event) {
 function initialize(event) {
     const eventType = event.type;
 
+
     if (eventType === 'PushEvent') {
+
         const events = event.payload.commits.reduce((acc, commit) => {
             return acc + "\n* " + commit.message
-        });
+        }, '');
 
         return {
             header: `Pushed ${event.payload.distinct_size} Commits on branch ${event.payload.ref.replace(/refs\/heads\//gi, '')}`,
             project: parseRepositoryName(event),
-            text: '',
+            text: events.toString(),
             id: event.id,
             createdAt: getCreatedAt(event),
             events
         }
     }
+    
     if (eventType === 'CreateEvent') {
         return handleCreateEvent(event);
     }
@@ -70,6 +73,7 @@ function initialize(event) {
 }
 
 function handleCreateEvent(event) {
+    
     let type = event.payload.ref_type;
     if (type === 'branch') {
         return buildResponse(event, `Created branch ${event.payload.ref} on ${parseRepositoryName(event)}`)

@@ -3,7 +3,6 @@ import './App.css';
 import EventList from './components/events/event-list';
 import defaultEvents from './config/static-events';
 import {getEvents} from './services/githubService';
-import {merge} from 'lodash';
 
 export default function App(){
     const [events, setEvents] = useState(defaultEvents);
