@@ -12,6 +12,7 @@ export default function(props) {
             </div>
             {props.projectName ? <p className='project-name'>Project: {props.projectName}</p> : ''}
             <p>{props.text}</p>
+            {props.image ? <img className='event-image' src={'images/' + props.image} alt=""/> : undefined}
         </div>
     )
 }

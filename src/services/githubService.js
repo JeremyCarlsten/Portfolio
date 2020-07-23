@@ -16,10 +16,7 @@ export function getEvents() {
             .then(data => {
                 let result = data
                     .map((event) => handleGithubEvent(event))
-                    .sort((a, b) => {
-                        return b.createdAt.getTime() - a.createdAt.getTime();
-                    });
-
+                
                 sessionStorage.setItem(sessionStorageKey, JSON.stringify(result));
                 return result
             }).catch((error) => {
