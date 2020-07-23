@@ -17,7 +17,7 @@ export function getEvents() {
                 let result = data
                     .map((event) => handleGithubEvent(event))
                 
-                sessionStorage.setItem(sessionStorageKey, JSON.stringify(result));
+                // sessionStorage.setItem(sessionStorageKey, JSON.stringify(result));
                 return result
             }).catch((error) => {
                 console.error(error)

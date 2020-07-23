@@ -17,18 +17,17 @@ function initialize(event) {
 
 
     if (eventType === 'PushEvent') {
+        const numberOfCommits = event.payload.commits.length
+        const commitMessages = event.payload.commits.map(commit => commit.message);
 
-        const events = event.payload.commits.reduce((acc, commit) => {
-            return acc + "\n* " + commit.message
-        }, '');
+        console.log('commit count', numberOfCommits)
 
         return {
-            header: `Pushed ${event.payload.distinct_size} Commits on branch ${event.payload.ref.replace(/refs\/heads\//gi, '')}`,
+            header: `Pushed ${numberOfCommits} Commits on branch ${event.payload.ref.replace(/refs\/heads\//gi, '')}`,
             project: parseRepositoryName(event),
-            text: events.toString(),
+            text: commitMessages,
             id: event.id,
             createdAt: getCreatedAt(event),
-            events
         }
     }
 
