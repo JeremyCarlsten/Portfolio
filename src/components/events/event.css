@@ -5,3 +5,14 @@
     margin-top: 5px;
     margin-bottom: 15px;
 }
+
+.event-image {
+    width: 100%;
+    margin: 15px 0px;
+}
+
+.commit-list {
+    list-style: disc;
+    padding: 5px 25px;
+    font-style: italic;
+}
