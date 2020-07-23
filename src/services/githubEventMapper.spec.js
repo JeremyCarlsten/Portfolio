@@ -11,7 +11,7 @@ describe('githubEventMapper', ()=> {
 
             const actual = handleGithubEvent(event)
             
-            expect(actual.header).toEqual(`Created branch ${event.payload.ref} on ${event.repo.name}`)
+            expect(actual.header).toEqual(`Created branch ${event.payload.ref}`)
             expect(actual.text).toEqual('')
             expect(actual.createdAt).toEqual(createdAt)
         })
