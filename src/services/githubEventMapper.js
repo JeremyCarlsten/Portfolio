@@ -15,20 +15,6 @@ export function handleGithubEvent(event) {
 function initialize(event) {
     const eventType = event.type;
 
-
-    if (eventType === 'PushEvent') {
-        const numberOfCommits = event.payload.commits.length
-        const commitMessages = event.payload.commits.map(commit => commit.message);
-
-        return {
-            header: `Pushed ${numberOfCommits} Commits on branch ${event.payload.ref.replace(/refs\/heads\//gi, '')}`,
-            project: parseRepositoryName(event),
-            text: commitMessages,
-            id: event.id,
-            createdAt: getCreatedAt(event),
-        }
-    }
-
     if (eventType === 'CreateEvent') {
         return handleCreateEvent(event);
     }
@@ -65,22 +51,17 @@ function initialize(event) {
     }
 
     return undefined
-
-
 }
 
 function handleCreateEvent(event) {
     
     let type = event.payload.ref_type;
-    if (type === 'branch') {
-        return undefined;
-    }
 
     if (type === 'repository') {
         return buildResponse(event, `Created project ${parseRepositoryName(event)}`, event.payload.description)
     }
 
-    return buildResponse(event, `Created ${parseRepositoryName(event)}`)
+    return undefined;
 }
 
 function handleIssuesEvent(event) {
@@ -114,14 +95,7 @@ function handlePullRequest(event){
             text: event.payload.pull_request.body
         }
     }
-    if(event.payload.action === 'closed'){
-        return {
-            header: `Closed Pull Request #${event.payload.number}`,
-            project: parseRepositoryName(event),
-            id: event.id,
-            createdAt: getCreatedAt(event),
-        }
-    }
+    return undefined;
 }
 
 function parseRepositoryName(event) {

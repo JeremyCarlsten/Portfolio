@@ -1,6 +1,5 @@
 
 import {handleGithubEvent} from "../services/githubEventMapper";
-
 const githubApiUrl = 'https://api.github.com/users/';
 const githubUsername = 'JeremyCarlsten';
 
