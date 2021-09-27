@@ -1,0 +1,60 @@
+#welcome-section {
+    color: #fff; 
+    height:100vh;
+    min-height: 500px;
+    padding-top: 100px;
+    background-image: url('../images/pexels-danny-meneses-cropped.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#welcome-section p {
+    font-family: 'Yanone Kaffeesatz', serif;
+    opacity: .7;
+    font-size: .9em;
+}
+
+#welcome-section a {
+    margin-left:5px;
+    color: #cecece;
+}
+
+#welcome-section a:hover {
+    text-decoration: none;
+}
+
+#welcome-section:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    background-position: cover;
+    z-index: -1;
+    bottom: 0;
+    transform-origin: bottom left;
+    transform: skewY(.5deg);
+  }
+
+
+#keep-going{
+    font-family: 'Yanone Kaffeesatz', serif;
+    width:100%;
+    position:absolute;
+    bottom: 5px;
+    color: #fff;
+    opacity: .7;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.callout {
+    margin-top: 250px;
+}
+
+.super-bold {
+    display:block;
+    font-size: 2.1em;
+    font-weight: 750;
+}

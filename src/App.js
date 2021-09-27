@@ -1,22 +1,15 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { BsChevronDown } from 'react-icons/bs';
 import { Col, Container, Row } from 'react-bootstrap';
 import jeremy from './images/Jeremy.jpg'
+import WelcomeSection from './components/welcome-section';
 
 export default function App() {
   return (
     <Container fluid>
       <Row>
-        <Col id="welcome-section">
-          <h1><span className='super-bold'>Hey, </span>I'm Jeremy. I develop websites</h1>
-          <p className="callout"> Need one? <a href="#contact">Contact me.</a></p>
-          <div id="keep-going">
-            <p>Keep scrolling for more.</p>
-            <BsChevronDown />
-          </div>
-        </Col>
+        <WelcomeSection />
       </Row>
       <Row id="about">
         <Col>
