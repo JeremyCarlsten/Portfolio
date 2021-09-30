@@ -5,6 +5,8 @@ import leanTechniques from '../images/lt-logo.png';
 import iowaStudentLoan from '../images/isl-logo.svg';
 import deere from '../images/jd-logo.png';
 
+import '../styles/about.css';
+
 
 export default function About() {
   return (
@@ -30,13 +32,13 @@ export default function About() {
         </p>
         <h3>Who I've worked for </h3>
         <Row id="logo-list">
-          <Col><a href="http://www.leantechniques.com" target="_blank"><img src={leanTechniques} alt="lean techniques" className="job-logo" /></a></Col>
-          <Col><a href="http://www.johndeere.com" target="_blank"><img src={deere} alt="lean techniques" className="job-logo" /></a></Col>
-          <Col><a href="http://www.iowastudentloan.org" target="_blank"><img src={iowaStudentLoan} alt="lean techniques" className="job-logo" /></a></Col>
+          <Col><a href="http://www.leantechniques.com" target="_blank" rel="noopener noreferrer"><img src={leanTechniques} alt="lean techniques" className="job-logo" /></a></Col>
+          <Col><a href="http://www.johndeere.com" target="_blank" rel="noopener noreferrer"><img src={deere} alt="lean techniques" className="job-logo" /></a></Col>
+          <Col><a href="http://www.iowastudentloan.org" target="_blank" rel="noopener noreferrer"><img src={iowaStudentLoan} alt="lean techniques" className="job-logo" /></a></Col>
         </Row>
         <h3>On a Personal Note</h3>
         <p>I am married to my Beautiful wife Kayla who runs a sucessful psychiatric office <a href="https://www.calamityroseranch.com">Calamity Rose Ranch</a>. 
-        We have five pretty awesome kids a small acerage in eastern Iowa with all the animals needed to start a small petting zoo.</p>
+        We have five pretty awesome kids, a small acerage in eastern Iowa with all the animals needed to start a small petting zoo.</p>
       </Col>
     </Row>
   );

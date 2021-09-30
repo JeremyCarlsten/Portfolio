@@ -1,6 +1,8 @@
 body {
-    overflow-x: hidden;
+    width: 100%;
+    overflow-x: hidden!important;
 }
+
 h1{
     font-family: 'Yanone Kaffeesatz', serif;
     font-size: 2em;
