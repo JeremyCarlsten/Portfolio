@@ -1,0 +1,35 @@
+
+.portfolio-picture img {
+    width: 50%;
+    border-radius: 100%;
+    box-shadow: 1px 2px 5px #000;
+}
+
+.portfolio-picture {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo-list {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.job-logo{
+    width: 80%;
+}
+
+#about {
+    margin-top: 50px;
+}
+
+#about p {
+    margin: 30px 0px;
+}
+
+#about h2, #about h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
