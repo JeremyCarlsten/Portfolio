@@ -1,0 +1,52 @@
+#project-list {
+    color: #fff;
+    text-align: center;
+    padding: 100px 0 50px 0;
+    background: #222;
+    justify-content: center;
+}
+
+#project-list h1 {
+    margin-bottom: 50px;
+}
+
+.project-item {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.project-item h3 a{
+    color: #fff;
+}
+
+.project-item h3 a:hover{
+    color: #919191;
+    text-decoration: underline;
+}
+
+
+.project-picture {
+    width: 500px;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px #000 inset;
+}
+
+@media (max-width: 1100px) {
+    .project-picture {
+        width: 800px;
+    }
+}
+
+@media (max-width: 900px) {
+    .project-picture {
+        width: 500px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .project-picture {
+        width: 300px;
+    }
+}
+
