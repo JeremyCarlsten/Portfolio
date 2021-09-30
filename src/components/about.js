@@ -27,7 +27,7 @@ export default function About() {
           lead me to a fantastic career learning all kinds of cool stuff.
         </p>
         <p>
-          Quickly, I was able to grow in my career, first to the role of a senior developer, and then a team leader while working at Iowa Student loans.
+          Quickly, I was able to grow in my career, first to the role of a senior developer, and then a team leader while working at Iowa Student Loan.
           Later, I decided it was time to learn something new, and I moved my career into the world of consulting for Lean Techniques.
         </p>
         <h3>Who I've worked for </h3>
@@ -37,7 +37,7 @@ export default function About() {
           <Col><a href="http://www.iowastudentloan.org" target="_blank" rel="noopener noreferrer"><img src={iowaStudentLoan} alt="lean techniques" className="job-logo" /></a></Col>
         </Row>
         <h3>On a Personal Note</h3>
-        <p>I am married to my Beautiful wife Kayla who runs a sucessful psychiatric office <a href="https://www.calamityroseranch.com">Calamity Rose Ranch</a>. 
+        <p>I am married to my beautiful wife Kayla who runs a sucessful business of her own, <a href="https://www.calamityroseranch.com">Calamity Rose Ranch</a>. 
         We have five pretty awesome kids, a small acerage in eastern Iowa with all the animals needed to start a small petting zoo.</p>
       </Col>
     </Row>
