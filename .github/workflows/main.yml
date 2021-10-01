@@ -14,15 +14,15 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 12
-    - run: npm install
-    - run: npm run test
-    - name: Make envfile
-      uses: SpicyPizza/create-envfile@v1
-      with:
-        envkey_REACT_APP_USER_ID: ${{ secrets.REACT_APP_USER_ID }}
-        envkey_REACT_APP_SERVICE_ID: ${{ secrets.REACT_APP_SERVICE_ID }}
-        envkey_REACT_APP_TEMPLATE_ID: ${{ secrets.REACT_APP_TEMPLATE_ID }}
-    - run: npm run build
+    - name: Build
+          run: |
+            npm install
+            npm run test
+            npm run-script build
+          env:
+             REACT_APP_USER_ID: ${{ secrets.REACT_APP_USER_ID }}
+             REACT_APP_SERVICE_ID: ${{ secrets.REACT_APP_SERVICE_ID }}
+             REACT_APP_TEMPLATE_ID: ${{ secrets.REACT_APP_TEMPLATE_ID }}
     - name: Upload ftp
       uses: sebastianpopp/ftp-action@releases/v2
       with:
