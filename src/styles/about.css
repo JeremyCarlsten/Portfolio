@@ -1,7 +1,7 @@
 .portfolio-picture img {
     width: 50%;
     border-radius: 100%;
-    box-shadow: 1px 2px 5px #000;
+    box-shadow: 1px 2px 5px #222;
 }
 
 .portfolio-picture {
@@ -23,7 +23,7 @@
 
 .social a:hover {
     cursor: pointer;
-    color: #555555
+    opacity: .7;
 }
 
 #logo-list {
@@ -34,7 +34,10 @@
 
 .job-logo {
     width: 80%;
+}
 
+.job-logo:hover {
+    opacity: .7;
 }
 
 #logo-list a{

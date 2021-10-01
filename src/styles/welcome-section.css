@@ -9,6 +9,7 @@
     background-position: center;
     background-repeat: no-repeat;
     overflow-x: hidden;
+    box-shadow: -3px 3px 7px #555555;
 }
 
 #welcome-section p {
