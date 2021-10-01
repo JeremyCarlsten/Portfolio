@@ -15,15 +15,18 @@
     text-align: center;
 }
 
-.project-item h3 a{
+.project-item a{
     color: #fff;
+    text-decoration: none;
 }
 
-.project-item h3 a:hover{
-    color: #919191;
+.project-item a:hover {
     text-decoration: underline;
 }
 
+.project-item:hover {
+    opacity: .7;
+}
 
 .project-picture {
     width: 500px;

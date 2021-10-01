@@ -3,7 +3,6 @@ import { Row } from 'react-bootstrap';
 import ProjectItem from './project-item';
 import calamityRoseRanch from '../images/projects/calamityroseranch.png'
 import horseTackDatabase from '../images/projects/horsetackdatabase.png'
-// import noImage from '../images/projects/noImage.png'
 import '../styles/project-list.css';
 
 function getProjects() {
