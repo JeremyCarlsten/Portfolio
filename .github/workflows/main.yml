@@ -4,17 +4,6 @@ on:
       - master
 name: Deploy Website
 jobs:
-  create-envfile:
- 
-    runs-on: ubuntu-18.04
- 
-    steps:
-    - name: Make envfile
-      uses: SpicyPizza/create-envfile@v1
-      with:
-        envkey_REACT_APP_USER_ID: ${{ secrets.REACT_APP_USER_ID }}
-        envkey_REACT_APP_SERVICE_ID: ${{ secrets.REACT_APP_SERVICE_ID }}
-        envkey_REACT_APP_TEMPLATE_ID: ${{ secrets.REACT_APP_TEMPLATE_ID }}
   deploy:
     runs-on: ubuntu-latest
     strategy:
@@ -27,6 +16,12 @@ jobs:
         node-version: 12
     - run: npm install
     - run: npm run test
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1
+      with:
+        envkey_REACT_APP_USER_ID: ${{ secrets.REACT_APP_USER_ID }}
+        envkey_REACT_APP_SERVICE_ID: ${{ secrets.REACT_APP_SERVICE_ID }}
+        envkey_REACT_APP_TEMPLATE_ID: ${{ secrets.REACT_APP_TEMPLATE_ID }}
     - run: npm run build
     - name: Upload ftp
       uses: sebastianpopp/ftp-action@releases/v2
