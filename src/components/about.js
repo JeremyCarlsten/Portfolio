@@ -5,14 +5,26 @@ import leanTechniques from '../images/lt-logo.png';
 import iowaStudentLoan from '../images/isl-logo.svg';
 import deere from '../images/jd-logo.png';
 
+import { FaFacebookSquare, FaLinkedin, FaGithubSquare, FaEnvelope } from 'react-icons/fa';
+
 import '../styles/about.css';
 
 
 export default function About() {
   return (
     <Row id="about">
-      <Col className="portfolio-picture" md>
-        <img src={profilePicture} alt="Jeremy" />
+      <Col md>
+        <Row className="portfolio-picture">
+          <img src={profilePicture} alt="Jeremy" />
+        </Row>
+        <Row className="social">
+          <Col>
+            <a href="https://www.facebook.com/JeremyCarlsten" target="_blank" rel="noopener noreferrer"><FaFacebookSquare /></a>
+            <a href="https://www.linkedin.com/in/jeremycarlsten/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+            <a href="https://github.com/JeremyCarlsten" target="_blank" rel="noopener noreferrer"><FaGithubSquare /></a>
+            <a href="mailto:jeremy@jeremycarlsten.com" target="_blank" rel="noopener noreferrer"><FaEnvelope /></a>
+          </Col>
+        </Row>
       </Col>
       <Col md>
         <h2> A little about myself. </h2>
@@ -23,7 +35,7 @@ export default function About() {
         </p>
         <p>
           They are great people who helped me not only hone my existing coding skillset; but,
-          also helped me to better understand the basics of software engineering which has 
+          also helped me to better understand the basics of software engineering which has
           lead me to a fantastic career learning all kinds of cool stuff.
         </p>
         <p>
@@ -33,8 +45,8 @@ export default function About() {
         <h3>Who I've worked for </h3>
         <Row id="logo-list">
           <Col><a href="http://www.leantechniques.com" target="_blank" rel="noopener noreferrer"><img src={leanTechniques} alt="lean techniques" className="job-logo" /></a></Col>
-          <Col><a href="http://www.johndeere.com" target="_blank" rel="noopener noreferrer"><img src={deere} alt="lean techniques" className="job-logo" /></a></Col>
-          <Col><a href="http://www.iowastudentloan.org" target="_blank" rel="noopener noreferrer"><img src={iowaStudentLoan} alt="lean techniques" className="job-logo" /></a></Col>
+          <Col><a href="http://www.johndeere.com" target="_blank" rel="noopener noreferrer"><img src={deere} alt="John Deere" className="job-logo" /><br />*Contracted via Lean Techniques</a></Col>
+          <Col><a href="http://www.iowastudentloan.org" target="_blank" rel="noopener noreferrer"><img src={iowaStudentLoan} alt="Iowa Student Loan" className="job-logo" /></a></Col>
         </Row>
         <h3>On a Personal Note</h3>
         <p>I am married to my beautiful wife Kayla who runs a sucessful business of her own, <a href="https://www.calamityroseranch.com">Calamity Rose Ranch</a>. 
