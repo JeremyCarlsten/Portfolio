@@ -1,0 +1,17 @@
+button.btn {
+    background: #222;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+button.btn:hover {
+    background: #222;
+    opacity: .7;
+}
+
+.bg-success {
+    background-color: #30dd78!important;
+    color: #fff;
+    font-family:  'Yanone Kaffeesatz', serif;
+    font-size: 1.1em;
+}

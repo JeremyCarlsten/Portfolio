@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import ContactDialog from './contact-dialog';
 import profilePicture from '../images/Jeremy.jpg'
 import leanTechniques from '../images/lt-logo.png';
 import iowaStudentLoan from '../images/isl-logo.svg';
@@ -11,6 +12,8 @@ import '../styles/about.css';
 
 
 export default function About() {
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <Row id="about">
       <Col md>
@@ -19,10 +22,10 @@ export default function About() {
         </Row>
         <Row className="social">
           <Col>
-            <a href="https://www.facebook.com/JeremyCarlsten" target="_blank" rel="noopener noreferrer"><FaFacebookSquare /></a>
-            <a href="https://www.linkedin.com/in/jeremycarlsten/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-            <a href="https://github.com/JeremyCarlsten" target="_blank" rel="noopener noreferrer"><FaGithubSquare /></a>
-            <a href="mailto:jeremy@jeremycarlsten.com" target="_blank" rel="noopener noreferrer"><FaEnvelope /></a>
+            <a className="social-item" href="https://www.facebook.com/JeremyCarlsten" target="_blank" rel="noopener noreferrer"><FaFacebookSquare /></a>
+            <a className="social-item" href="https://www.linkedin.com/in/jeremycarlsten/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+            <a className="social-item" href="https://github.com/JeremyCarlsten" target="_blank" rel="noopener noreferrer"><FaGithubSquare /></a>
+            <FaEnvelope  className="social-item" onClick={() => setModalShow(true)} />
           </Col>
         </Row>
       </Col>
@@ -49,11 +52,12 @@ export default function About() {
           <Col><a href="http://www.iowastudentloan.org" target="_blank" rel="noopener noreferrer"><img src={iowaStudentLoan} alt="Iowa Student Loan" className="job-logo" /></a></Col>
         </Row>
         <h2>On a Personal Note</h2>
-        <p>I am married to my beautiful wife Kayla who runs a sucessful business of her own, <a href="https://www.calamityroseranch.com">Calamity Rose Ranch</a>. 
-        We have five awesome kids who bring a ton of joy, and chaos, into my life. 
-        And a small acerage in eastern Iowa with all the animals needed to start a small petting zoo.
+        <p>I am married to my beautiful wife Kayla who runs a sucessful business of her own, <a href="https://www.calamityroseranch.com">Calamity Rose Ranch</a>.
+          We have five awesome kids who bring a ton of joy, and chaos, into my life.
+          And a small acerage in eastern Iowa with all the animals needed to start a small petting zoo.
         </p>
       </Col>
+      <ContactDialog show={modalShow} onHide={() => setModalShow(false)} />
     </Row>
   );
 }
