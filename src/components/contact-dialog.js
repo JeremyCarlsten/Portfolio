@@ -13,10 +13,8 @@ const apiKeys = {
 function sendEmail(event, onHide, setToastConfig) {
     const formValid = document.getElementById('contact-form').checkValidity();
     if (formValid === false) {
-        console.log('invalid');
         return;
     } else {
-        console.log('valid');
         event.preventDefault();
         sendForm(apiKeys.SERVICE_ID, apiKeys.TEMPLATE_ID, '#contact-form')
             .then((result) => {
@@ -47,10 +45,8 @@ function sendEmail(event, onHide, setToastConfig) {
 export default function ContactDialog(props) {
     const [toastConfig, setToastConfig] = useState({ show: false });
 
-    init("user_Adfczsg8JoasggnkdNipp");
+    init(process.env.REACT_APP_USER_ID);
 
-    console.log(process.env)
-    console.log(apiKeys)
     return (
         <>
             <Modal show={props.show} backdrop='static' >
