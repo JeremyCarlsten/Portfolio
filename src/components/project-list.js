@@ -6,8 +6,8 @@ import horseTackDatabase from '../images/projects/horsetackdatabase.png'
 import '../styles/project-list.css';
 
 function getProjects() {
-  return projectConfig.map(config => {
-    return <ProjectItem {...config} />
+  return projectConfig.map((config, index) => {
+    return <ProjectItem {...config} key={index} />
   });
 }
 
