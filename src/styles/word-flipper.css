@@ -1,0 +1,45 @@
+
+
+.word-flipper{
+    position: relative;
+    top: 7px;
+    display: inline-block;
+    overflow:hidden;
+    height: 1.1em;
+    width: 90px;
+}
+
+.word-flipper span {
+    display:block;
+    height: 100%;
+    padding-left: 10px;
+    color: orange;
+    animation: spin_words 10s infinite;
+}
+
+@keyframes spin_words {
+    10% {
+        transform: translateY(-112%);
+    }
+    25% {
+        transform: translateY(-100%);
+    }
+    35% {
+        transform: translateY(-212%);
+    }
+    50% {
+        transform: translateY(-200%);
+    }
+    60%{
+        transform: translateY(-312%);
+    }
+    75% {
+        transform: translateY(-300%);
+    }
+    85% {
+        transform: translateY(-412%);
+    }
+    100%{
+        transform: translateY(-400%);
+    }
+}

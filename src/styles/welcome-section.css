@@ -3,6 +3,7 @@
     height:100vh;
     min-height: 500px;
     padding-top: 100px;
+    padding-left: 40px;
     background-image: url('../images/pexels-danny-meneses-cropped.jpg');
     background-size: cover;
     background-position: center;
