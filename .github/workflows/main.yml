@@ -6,6 +6,7 @@ name: Deploy Website
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: production
     strategy:
       matrix:
         node-version: [12.x]
