@@ -32,18 +32,17 @@ export default function About() {
       <Col md>
         <h2> A little about myself. </h2>
         <p>
-          &nbsp;Hey, I'm Jeremy. I've been developing websites since high school.
-          I love the idea of writing some code and having it come out
-          the other end looking like a piece of artwork.
+          &nbsp;Hey, I'm Jeremy. I've been developing websites since high school. 
+          I always loved the idea of writing some code and having it come out the other end looking like a piece of artwork.
         </p>
         <p>
-          They are great people who helped me not only hone my existing coding skillset; but,
-          also helped me to better understand the basics of software engineering which has
-          lead me to a fantastic career learning all kinds of cool stuff.
+          After graduating with my associates degree from Indian Hills Community College, I was able to quickly grow my career. 
+          First to the role of a senior developer, and then a team leader while working at Iowa Student Loan.
+          Later, I decided it was time to learn something new, and I moved my career into the world of consulting for Lean Techniques... and the work from home lifestyle.
         </p>
         <p>
-          Quickly, I was able to grow in my career, first to the role of a senior developer, and then a team leader while working at Iowa Student Loan.
-          Later, I decided it was time to learn something new, and I moved my career into the world of consulting for Lean Techniques.
+          Along the way I have met and worked with some excellent developers who have helped me not only hone my existing coding skillset; 
+          but, also helped me better understand the basics of software engineering which has led me into learning all kinds of cool stuff.
         </p>
         <h2>Who I've worked for </h2>
         <Row id="logo-list">
