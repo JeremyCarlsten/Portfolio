@@ -3,6 +3,7 @@ import { Row } from 'react-bootstrap';
 import ProjectItem from './project-item';
 import calamityRoseRanch from '../images/projects/calamityroseranch.png'
 import horseTackDatabase from '../images/projects/horsetackdatabase.png'
+import sourdoughsimplified from '../images/projects/sourdoughsimplified.jpg'
 import '../styles/project-list.css';
 
 function getProjects() {
@@ -32,5 +33,12 @@ const projectConfig = [
     title: "Horse Tack Database",
     image: horseTackDatabase,
     url: 'http://www.horseTackDatabase.com'
-  }
+  },
+  {
+    title: "Sourdough Simplified",
+    image: sourdoughsimplified,
+    url: 'http://www.sourdoughsimplified.net'
+  },
+  
+
 ]
