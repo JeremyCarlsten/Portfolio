@@ -39,6 +39,9 @@ const projectConfig = [
     image: sourdoughsimplified,
     url: 'http://www.sourdoughsimplified.net'
   },
-  
-
+  {
+    title: "SquadRoll",
+    image: squadroll,
+    url: 'https://www.squadroll.com'
+  },
 ]
