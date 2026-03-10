@@ -4,6 +4,7 @@ import ProjectItem from './project-item';
 import calamityRoseRanch from '../images/projects/calamityroseranch.png'
 import horseTackDatabase from '../images/projects/horsetackdatabase.png'
 import sourdoughsimplified from '../images/projects/sourdoughsimplified.jpg'
+import squadroll from '../images/projects/squadroll.png'
 import '../styles/project-list.css';
 
 function getProjects() {
