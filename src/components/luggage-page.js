@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebookSquare } from 'react-icons/fa'
+import { FaEnvelope, FaPhone, FaSms } from 'react-icons/fa'
 import '../styles/luggage-page.css'
 
 const luggageConfig = {
   name: process.env.REACT_APP_LUGGAGE_NAME,
   email: process.env.REACT_APP_LUGGAGE_EMAIL,
-  phone: process.env.REACT_APP_LUGGAGE_PHONE,
-  address: process.env.REACT_APP_LUGGAGE_ADDRESS,
-  facebook: process.env.REACT_APP_LUGGAGE_FACEBOOK
+  phone: process.env.REACT_APP_LUGGAGE_PHONE
 }
 
 export default function LuggagePage() {
@@ -26,8 +24,10 @@ export default function LuggagePage() {
 
   return (
     <Container fluid className="luggage-page">
+      <div className="luggage-bg" aria-hidden="true" />
       <Row className="luggage-content">
         <Col>
+          <span className="luggage-emoji" role="img" aria-label="luggage">🧳</span>
           <h1 className="luggage-thank-you">Thank you!</h1>
           <p className="luggage-intro">
             If you found this luggage, I really appreciate you taking the time to help get it back.
@@ -41,20 +41,15 @@ export default function LuggagePage() {
               </a>
             )}
             {luggageConfig.phone && (
-              <a href={`tel:${luggageConfig.phone.replace(/\D/g, '')}`} className="luggage-contact-item">
-                <FaPhone /> {luggageConfig.phone}
-              </a>
-            )}
-            {luggageConfig.address && (
-              <p className="luggage-contact-item luggage-address">
-                <FaMapMarkerAlt />
-                <span>{luggageConfig.address}</span>
-              </p>
-            )}
-            {luggageConfig.facebook && (
-              <a href={luggageConfig.facebook} target="_blank" rel="noopener noreferrer" className="luggage-social-link" aria-label="Facebook">
-                <FaFacebookSquare />
-              </a>
+              <div className="luggage-contact-item luggage-phone-row">
+                <a href={`tel:${luggageConfig.phone.replace(/\D/g, '')}`} aria-label="Call">
+                  <FaPhone />
+                </a>
+                <a href={`sms:${luggageConfig.phone.replace(/\D/g, '')}`} aria-label="Send text">
+                  <FaSms />
+                </a>
+                <span>{luggageConfig.phone}</span>
+              </div>
             )}
           </div>
         </Col>

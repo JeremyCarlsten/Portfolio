@@ -27,8 +27,6 @@ jobs:
          REACT_APP_LUGGAGE_NAME: ${{ secrets.REACT_APP_LUGGAGE_NAME }}
          REACT_APP_LUGGAGE_EMAIL: ${{ secrets.REACT_APP_LUGGAGE_EMAIL }}
          REACT_APP_LUGGAGE_PHONE: ${{ secrets.REACT_APP_LUGGAGE_PHONE }}
-         REACT_APP_LUGGAGE_ADDRESS: ${{ secrets.REACT_APP_LUGGAGE_ADDRESS }}
-         REACT_APP_LUGGAGE_FACEBOOK: ${{ secrets.REACT_APP_LUGGAGE_FACEBOOK }}
     - name: Upload ftp
       uses: sebastianpopp/ftp-action@releases/v2
       with:
