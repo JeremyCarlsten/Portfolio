@@ -4,6 +4,7 @@ import ProjectItem from './project-item';
 import calamityRoseRanch from '../images/projects/calamityroseranch.png'
 import horseTackDatabase from '../images/projects/horsetackdatabase.png'
 import sourdoughsimplified from '../images/projects/sourdoughsimplified.jpg'
+import easyincubate from '../images/projects/easy-incubate.png'
 import squadroll from '../images/projects/squadroll.png'
 import '../styles/project-list.css';
 
@@ -45,4 +46,9 @@ const projectConfig = [
     image: squadroll,
     url: 'https://www.squadroll.com'
   },
+  {
+    title: 'Easy Incubate',
+    image: easyincubate,
+    url: 'https://www.easyincubate.com'
+  }
 ]

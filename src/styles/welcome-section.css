@@ -15,7 +15,7 @@
 #welcome-section p {
     font-family: 'Yanone Kaffeesatz', serif;
     opacity: .7;
-    font-size: .9em;
+    font-size: 1.2em;
 }
 
 #welcome-section a:hover {
@@ -24,6 +24,7 @@
 
 #keep-going{
     font-family: 'Yanone Kaffeesatz', serif;
+    font-size: 1.2em;
     width:100%;
     position:absolute;
     bottom: 5px;
@@ -49,6 +50,6 @@
 
 .super-bold {
     display:block;
-    font-size: 2.1em;
+    font-size: 2.7em;
     font-weight: 750;
 }
