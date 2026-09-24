@@ -6,6 +6,7 @@ import horseTackDatabase from '../images/projects/horsetackdatabase.png'
 import sourdoughsimplified from '../images/projects/sourdoughsimplified.jpg'
 import easyincubate from '../images/projects/easy-incubate.png'
 import squadroll from '../images/projects/squadroll.png'
+import gridfinityStudio from '../images/projects/gridfinity-studio.jpg'
 import '../styles/project-list.css';
 
 function getProjects() {
@@ -50,5 +51,11 @@ const projectConfig = [
     title: 'Easy Incubate',
     image: easyincubate,
     url: 'https://www.easyincubate.com'
+  },
+  {
+    title: 'Gridfinity Studio',
+    image: gridfinityStudio,
+    imageAlt: 'Gridfinity Studio drawer planner homepage',
+    url: 'https://www.gridfinitystudio.com'
   }
 ]
